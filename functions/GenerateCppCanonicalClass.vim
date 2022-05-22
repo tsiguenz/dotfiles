@@ -6,7 +6,7 @@
 "    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/05/22 02:19:49 by tsiguenz          #+#    #+#              "
-"    Updated: 2022/05/22 02:55:00 by tsiguenz         ###   ########.fr        "
+"    Updated: 2022/05/22 18:07:44 by tsiguenz         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -18,13 +18,17 @@ function! Class(ClassName)
 
 	execute 'vsp src/'.a:ClassName.'.hpp'
 	execute 'normal! i#ifndef '.toupper(a:ClassName).'_HPP'
-	execute 'normal! o#define '.toupper(a:ClassName).'_HPP'
+	execute 'normal! o# define '.toupper(a:ClassName).'_HPP'
+	execute 'normal! o'
+	execute 'normal! o# include <iostream>'
 	execute 'normal! o'
 	execute 'normal! oclass '.a:ClassName.' {'
 	execute 'normal! o'
 	execute 'normal! opublic:'
 	execute 'normal! o	'.a:ClassName.'(void);'
+	execute 'normal! o	'.a:ClassName.'('.a:ClassName.' const& '.tolower(a:ClassName).');'
 	execute 'normal! o	~'.a:ClassName.'(void);'
+	execute 'normal! o	'.a:ClassName.'& operator=('.a:ClassName.' const& '.tolower(a:ClassName).');'
 	execute 'normal! o'
 	execute 'normal! oprivate:'
 	execute 'normal! o'
@@ -43,7 +47,16 @@ function! Class(ClassName)
 	execute 'normal! o	return ;'
 	execute 'normal! o}'
 	execute 'normal! o'
+	execute 'normal! o'.a:ClassName.'::'.a:ClassName.'('.a:ClassName.' const& '.tolower(a:ClassName).') {'
+	execute 'normal! o	*this = '.a:ClassName.';'
+	execute 'normal! o	return ;'
+	execute 'normal! o}'
+	execute 'normal! o'
 	execute 'normal! o'.a:ClassName.'::~'.a:ClassName.'(void) {'
+	execute 'normal! o	return ;'
+	execute 'normal! o}'
+	execute 'normal! o'
+	execute 'normal! o'.a:ClassName.'	'.a:ClassName.'::operator=('.a:ClassName.' const& '.tolower(a:.ClassName).') {'
 	execute 'normal! o	return ;'
 	execute 'normal! o}'
 	execute 'Stdheader'
