@@ -10,6 +10,8 @@ set splitbelow
 set splitright
 set listchars=tab:>-
 set hlsearch
+set wildmenu
+set wildignorecase
 let mapleader=" "
 nnoremap <leader>h <C-W>h
 nnoremap <leader>j <C-W>j
