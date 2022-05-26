@@ -6,7 +6,7 @@
 "    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/05/22 02:19:49 by tsiguenz          #+#    #+#              "
-"    Updated: 2022/05/22 18:38:03 by tsiguenz         ###   ########.fr        "
+"    Updated: 2022/05/25 17:17:52 by tsiguenz         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -25,12 +25,10 @@ function! Class(ClassName)
 	execute 'normal! oclass '.a:ClassName.' {'
 	execute 'normal! o'
 	execute 'normal! opublic:'
-	execute 'normal! o// Canonical elements'
 	execute 'normal! o	'.a:ClassName.'(void);'
 	execute 'normal! o	'.a:ClassName.'('.a:ClassName.' const& '.tolower(a:ClassName).');'
 	execute 'normal! o	~'.a:ClassName.'(void);'
 	execute 'normal! o	'.a:ClassName.'& operator=('.a:ClassName.' const& '.tolower(a:ClassName).');'
-	execute 'normal! o// End of canonical elements'
 	execute 'normal! o'
 	execute 'normal! oprivate:'
 	execute 'normal! o'
