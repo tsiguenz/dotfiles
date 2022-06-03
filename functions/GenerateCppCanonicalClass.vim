@@ -6,7 +6,7 @@
 "    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/05/22 02:19:49 by tsiguenz          #+#    #+#              "
-"    Updated: 2022/05/31 15:48:25 by tsiguenz         ###   ########.fr        "
+"    Updated: 2022/06/03 08:54:13 by tsiguenz         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -23,16 +23,15 @@ function! Class(ClassName)
 	execute 'normal! o# include <iostream>'
 	execute 'normal! o'
 	execute 'normal! oclass '.a:ClassName.' {'
+	execute 'normal! o	public:'
+	execute 'normal! o		'.a:ClassName.'(void);'
+	execute 'normal! o		'.a:ClassName.'('.a:ClassName.' const& '.tolower(a:ClassName).');'
+	execute 'normal! o		virtual ~'.a:ClassName.'(void);'
+	execute 'normal! o		'.a:ClassName.'& operator=('.a:ClassName.' const& '.tolower(a:ClassName).');'
 	execute 'normal! o'
-	execute 'normal! opublic:'
-	execute 'normal! o	'.a:ClassName.'(void);'
-	execute 'normal! o	'.a:ClassName.'('.a:ClassName.' const& '.tolower(a:ClassName).');'
-	execute 'normal! o	virtual ~'.a:ClassName.'(void);'
-	execute 'normal! o	'.a:ClassName.'& operator=('.a:ClassName.' const& '.tolower(a:ClassName).');'
-	execute 'normal! o'
-	execute 'normal! oprivate:'
-	execute 'normal! o'
-	execute 'normal! o};'
+	execute 'normal! o	private:'
+	execute 'normal! o	'
+	execute 'normal! o	};'
 	execute 'normal! o'
 	execute 'normal! o#endif // '.toupper(a:ClassName).'_HPP'
 	execute 'Stdheader'
