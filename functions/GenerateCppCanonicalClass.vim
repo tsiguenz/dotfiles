@@ -6,7 +6,7 @@
 "    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/05/22 02:19:49 by tsiguenz          #+#    #+#              "
-"    Updated: 2022/06/03 08:54:13 by tsiguenz         ###   ########.fr        "
+"    Updated: 2022/06/05 00:19:04 by tsiguenz         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -24,9 +24,9 @@ function! Class(ClassName)
 	execute 'normal! o'
 	execute 'normal! oclass '.a:ClassName.' {'
 	execute 'normal! o	public:'
-	execute 'normal! o		'.a:ClassName.'(void);'
+	execute 'normal! o		'.a:ClassName.'();'
 	execute 'normal! o		'.a:ClassName.'('.a:ClassName.' const& '.tolower(a:ClassName).');'
-	execute 'normal! o		virtual ~'.a:ClassName.'(void);'
+	execute 'normal! o		virtual ~'.a:ClassName.'();'
 	execute 'normal! o		'.a:ClassName.'& operator=('.a:ClassName.' const& '.tolower(a:ClassName).');'
 	execute 'normal! o'
 	execute 'normal! o	private:'
@@ -42,7 +42,7 @@ function! Class(ClassName)
 	execute 'sp src/'.a:ClassName.'.cpp'
 	execute 'normal! i#include "'.a:ClassName.'.hpp"'
 	execute 'normal! o'
-	execute 'normal! o'.a:ClassName.'::'.a:ClassName.'(void) {'
+	execute 'normal! o'.a:ClassName.'::'.a:ClassName.'() {'
 	execute 'normal! o	return ;'
 	execute 'normal! o}'
 	execute 'normal! o'
@@ -51,7 +51,7 @@ function! Class(ClassName)
 	execute 'normal! o	return ;'
 	execute 'normal! o}'
 	execute 'normal! o'
-	execute 'normal! o'.a:ClassName.'::~'.a:ClassName.'(void) {'
+	execute 'normal! o'.a:ClassName.'::~'.a:ClassName.'() {'
 	execute 'normal! o	return ;'
 	execute 'normal! o}'
 	execute 'normal! o'
