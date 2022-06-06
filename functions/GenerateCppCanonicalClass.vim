@@ -6,7 +6,7 @@
 "    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         "
 "                                                 +#+#+#+#+#+   +#+            "
 "    Created: 2022/05/22 02:19:49 by tsiguenz          #+#    #+#              "
-"    Updated: 2022/06/05 00:19:04 by tsiguenz         ###   ########.fr        "
+"    Updated: 2022/06/06 12:31:44 by tsiguenz         ###   ########.fr        "
 "                                                                              "
 " **************************************************************************** "
 
@@ -30,7 +30,7 @@ function! Class(ClassName)
 	execute 'normal! o		'.a:ClassName.'& operator=('.a:ClassName.' const& '.tolower(a:ClassName).');'
 	execute 'normal! o'
 	execute 'normal! o	private:'
-	execute 'normal! o	'
+	execute 'normal! o'
 	execute 'normal! o	};'
 	execute 'normal! o'
 	execute 'normal! o#endif // '.toupper(a:ClassName).'_HPP'
