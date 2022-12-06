@@ -8,13 +8,13 @@ This is my minimal configuration for vim and tmux.
 
 - Clone the project:
 
-```bash
+```
 git clone git@github.com:tsiguenz/dotfiles.git && cd dotfiles
 ```
 
 - Execute the script init.sh:
 
-```bash
+```
 bash init.sh
 ```
 
