@@ -5,7 +5,7 @@ vimrc_path=~/.vimrc
 tmux_conf_path=~/.tmux.conf
 
 echo "Copy directory functions/ in $vim_folder_path"
-mkdir ~/.vim/functions
+mkdir -p ~/.vim/functions
 cp -iurf functions/ $vim_folder_path
 
 echo "Copy vimrc in $vimrc_path"
