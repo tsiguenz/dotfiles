@@ -44,3 +44,9 @@ require("indent_blankline").setup {
     show_current_context_start = true,
 }
 EOF
+
+lua << EOF
+require('nvim-treesitter.configs').setup {
+  ensure_installed =  { "javascript", "typescript", "tsx", "html", "css", "json", "yaml", "graphql", "python", "bash", "lua", "c", "cpp", "go", "java", "php", "ruby", "swift", "toml", "vim", "vue", "yaml" }
+}
+EOF

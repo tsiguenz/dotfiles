@@ -17,4 +17,4 @@ cp -iuf tmux.conf $tmux_conf_path
 
 echo "Copy nvim config to $nvim_folder_path"
 mkdir -p $nvim_folder_path
-cp -iurf nvim_config $nvim_folder_path/init.vim
+cp -iurf init.vim $nvim_folder_path
