@@ -10,6 +10,19 @@ Plug 'nvim-treesitter/nvim-treesitter'
 " highlight colors
 Plug 'gko/vim-coloresque'
 Plug 'github/copilot.vim'
+
+" fuzzy finder
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 call plug#end()
 
 " ======= override .vimrc for web development
@@ -20,8 +33,13 @@ set expandtab
 syntax enable
 colors gruvbox
 
-let g:ale_fix_on_save = 1
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
+" ale
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
@@ -32,7 +50,6 @@ let g:ale_fixers = {
 \   'c': ['clang-format'],
 \   'cpp': ['clang-format']
 \}
-
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint'],
@@ -43,10 +60,11 @@ let g:ale_linters = {
 \   'c': ['clang'],
 \   'cpp': ['clang']
 \}
-
 let g:ale_lint_delay = 0
-
 let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
+
+let g:deoplete#enable_at_startup = 1
 
 lua << EOF
 require("indent_blankline").setup {
