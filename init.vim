@@ -30,6 +30,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Disable mouse
+set mouse=c
+
 syntax enable
 colors gruvbox
 
