@@ -3,6 +3,7 @@ source ~/.vimrc
 call plug#begin('~/.config/nvim/plugged')
 " linter and parser
 Plug 'dense-analysis/ale'
+Plug 'leafOfTree/vim-vue-plugin'
 " color scheme
 Plug 'morhetz/gruvbox'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -46,6 +47,7 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
+\   'vue': ['prettier'],
 \   'tsx': ['prettier'],
 \   'json': ['prettier'],
 \   'yaml': ['prettier'],
@@ -56,6 +58,7 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint'],
+\   'vue': ['eslint'],
 \   'tsx': ['eslint'],
 \   'json': ['jsonlint'],
 \   'yaml': ['yamllint'],
