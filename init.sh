@@ -3,7 +3,7 @@
 vim_folder_path=~/.vim/
 vimrc_path=~/.vimrc
 tmux_conf_path=~/.tmux.conf
-nvim_folder_path=~/.config/nvim/
+nvim_folder_path=~/.config/
 
 echo "Copy directory functions/ in $vim_folder_path"
 mkdir -p ~/.vim/functions
@@ -17,4 +17,4 @@ cp -iuf tmux.conf $tmux_conf_path
 
 echo "Copy nvim config to $nvim_folder_path"
 mkdir -p $nvim_folder_path
-cp -iurf init.vim $nvim_folder_path
+cp -iurf nvim $nvim_folder_path
