@@ -1,3 +1,2 @@
 Auto install ohmyzsh
 Change the theme to agnoster
-Install powerline fonts
