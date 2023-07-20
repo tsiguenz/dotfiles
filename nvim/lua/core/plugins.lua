@@ -18,11 +18,20 @@ return require('packer').startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	-- Code parser
 	use 'nvim-treesitter/nvim-treesitter'
-	-- Powerline for nvim
 	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	  "zbirenbaum/copilot.lua",
+ 	  cmd = "Copilot",
+ 	  event = "InsertEnter",
+ 	  config = function()
+ 	    require("copilot").setup({
+				suggestion = {
+					auto_trigger = true
+				}
+			})
+ 	  end,
 	}
+	-- Powerline for nvim
+	use 'nvim-lualine/lualine.nvim'
 	-- File explorer and so forth
 	use {
 		'nvim-telescope/telescope.nvim',
@@ -38,20 +47,14 @@ return require('packer').startup(function(use)
 			"williamboman/mason-lspconfig.nvim",
 		},
 	})
-	-- Format and lint
-	use("jose-elias-alvarez/null-ls.nvim")
-	-- Autocompletion plugin
+	-- lint and format
+	use "jose-elias-alvarez/null-ls.nvim"
+	use "jay-babu/mason-null-ls.nvim"
+		-- Autocompletion plugin
 	use { 'hrsh7th/nvim-cmp',
 		requires = {
-			-- Snippet Engine & its associated nvim-cmp source
-			'L3MON4D3/LuaSnip',
-			'saadparwaiz1/cmp_luasnip',
-
 			-- Adds LSP completion capabilities
 			'hrsh7th/cmp-nvim-lsp',
-
-			-- Adds a number of user-friendly snippets
-			'rafamadriz/friendly-snippets',
 		}
 	}
 	-- Automatically set up your configuration after cloning packer.nvim
