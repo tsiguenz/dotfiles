@@ -1,3 +1,6 @@
+local	null_ls = require("null-ls")
+local mason_null_ls = require("mason-null-ls")
+
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- LSP formatting filter
@@ -17,7 +20,7 @@ local lsp_formatting = function(bufnr)
 	})
 end
 
-require("null_ls").setup({
+null_ls.setup({
 	-- set auto format on save
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
@@ -33,7 +36,7 @@ require("null_ls").setup({
 	end,
 })
 
-require("mason_null_ls").setup({
+mason_null_ls.setup({
 	ensure_installed = {
 		"markdownlint",
 		"shellcheck",
