@@ -1,0 +1,3 @@
+Install ohmyzsh
+Change the theme to agnoster
+Install patched font from nerd-fonts (DejaVu)

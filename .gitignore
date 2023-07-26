@@ -1,1 +1,3 @@
 *.swp
+nvim/plugin
+nvim/plugged
