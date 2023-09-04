@@ -21,5 +21,5 @@ nnoremap <leader>l <C-W>l
 set exrc
 set secure
 
-# uncomment to use this function
-# source ~/.vim/functions/GenerateCppCanonicalClass.vim
+" uncomment to use this function
+" source ~/.vim/functions/GenerateCppCanonicalClass.vim
