@@ -52,7 +52,6 @@ local servers = {
 	clangd = {},
 	pyright = {},
 	bashls = {},
-	asm_lsp = {},
 }
 
 -- MASON.NVIM
