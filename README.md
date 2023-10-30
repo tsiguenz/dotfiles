@@ -1,10 +1,10 @@
 ## Dotfiles
 
-This is my minimal configuration for vim and tmux.
+This is my configurations files.
 
 ---
 
-### How can I use it
+### How to use
 
 - Clone the project:
 
@@ -16,14 +16,4 @@ git clone git@github.com:tsiguenz/dotfiles.git && cd dotfiles
 
 ```
 bash init.sh
-```
-
----
-
-### Function
-
-Create cannonical class in cpp. You need to open vim at the root of your project and a directory named src. Then run this command in normal mode:
-
-```vim
-:call Class("toto")
 ```
