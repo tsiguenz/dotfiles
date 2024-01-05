@@ -1,4 +1,4 @@
-local	null_ls = require("null-ls")
+local null_ls = require("null-ls")
 local mason_null_ls = require("mason-null-ls")
 
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
@@ -47,6 +47,7 @@ mason_null_ls.setup({
 		"stylua",
 		"cpplint",
 		"flake8",
+		"autoflake",
 	},
 	automatic_installation = true,
 	handlers = {},

@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	-- Theme
 	use("ellisonleao/gruvbox.nvim")
-	use ("lukas-reineke/indent-blankline.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
 	-- Markdown preview
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -27,18 +27,6 @@ return require("packer").startup(function(use)
 	})
 	-- Code parser
 	use("nvim-treesitter/nvim-treesitter")
-	use({
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({
-				suggestion = {
-					accept = false,
-				},
-			})
-		end,
-	})
 	-- Powerline for nvim
 	use("nvim-lualine/lualine.nvim")
 	-- File explorer and so forth
