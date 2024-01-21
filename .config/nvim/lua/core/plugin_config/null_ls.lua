@@ -36,19 +36,23 @@ null_ls.setup({
 	end,
 })
 
+-- list of linters and formaters
 mason_null_ls.setup({
 	ensure_installed = {
 		"markdownlint",
 		"shellcheck",
 		"shfmt",
 		"yamllint",
-		"dockerlint",
 		"jsonlint",
 		"clang-format",
 		"stylua",
 		"cpplint",
-		"pep8",
+		"flake8",
 		"autopep8",
+		"hadolint",
+		"google-java-format",
+		"goimports",
+		"gotests",
 	},
 	automatic_installation = true,
 	handlers = {},

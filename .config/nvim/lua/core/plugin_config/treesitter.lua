@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup {
+require("nvim-treesitter.configs").setup({
 	indent = { enable = true },
 	ensure_installed = {
 		"javascript",
@@ -16,8 +16,12 @@ require('nvim-treesitter.configs').setup {
 		"php",
 		"vim",
 		"vue",
+		"go",
+		"rust",
+		"markdown",
+		"go",
 	},
 	highlight = {
 		enable = true,
 	},
-}
+})
