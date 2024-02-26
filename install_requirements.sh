@@ -25,8 +25,8 @@ sudo mv fonts/*.ttf /usr/share/fonts
 fc-cache
 rm -rf fonts DejaVuSansMono.tar.xz
 
-# install ohmyzsh and
-curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >install_omzsh
+# install ohmyzsh and set to default shell
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >install_ohmyzsh
 chmod +x install_ohmyzsh
 ./install_ohmyzsh --unattended --keep-zshrc
 rm -rf install_ohmyzsh
