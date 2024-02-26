@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "Install requirements..."
 ./install_requirements.sh
 
 DIR=$(pwd)
@@ -11,6 +12,8 @@ DOTFILES=(
 	".config/nvim"
 	".config/gdb"
 )
+
+echo "Create symlinks for dotfiles..."
 
 for dotfile in "${DOTFILES[@]}"; do
 	echo "Create symlink for ${dotfile}"

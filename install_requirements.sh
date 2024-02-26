@@ -3,15 +3,16 @@
 set -u
 
 # delete neovim
-sudo apt autoremove -y neovim
-sudo apt install -y vim zsh tmux wget curl sed
-sudo rm -rf /etc/vim
+sudo apt update -yq
+sudo apt autoremove -yq neovim
+sudo apt install -yq vim zsh tmux wget curl sed
 
 # install neovim latest
 wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-tar -xvf nvim-linux64.tar.gz
+tar -xvf nvim-linux64.tar.gz >/dev/null
 rm -rf nvim-linux64.tar.gz
 sudo mv nvim-linux64 /usr/share/
+rm -rf nvim-linux64
 sudo ln -s /usr/share/nvim-linux64/bin/nvim /usr/bin/nvim
 
 # install tmux plugin manager
@@ -20,8 +21,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # add patched font
 mkdir -p fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DejaVuSansMono.tar.xz
-tar -xf DejaVuSansMono.tar.xz -C fonts
-sudo mv fonts/*.ttf /usr/share/fonts
+tar -xf DejaVuSansMono.tar.xz -C fonts >/dev/null
+sudo cp -r fonts/*.ttf /usr/share/fonts
 fc-cache
 rm -rf fonts DejaVuSansMono.tar.xz
 
