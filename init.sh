@@ -10,6 +10,7 @@ DOTFILES=(
 	".zshrc"
 	".tmux.conf"
 	".config/nvim"
+	".config/alacritty"
 	".config/gdb"
 )
 
