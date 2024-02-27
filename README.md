@@ -1,14 +1,14 @@
 # Dotfiles
 
-This is my configurations files.
-The script init.sh install and configure neovim, vim, tmux and zsh.
+## ***Only tested on parrot.ova***
 
-For everything working you need to:
+The script init.sh install and configure neovim, vim, tmux, zsh and alacritty.
 
-- logout to reload the new default shell
+After this we need manual things:
+
 - run tmux then CTRL-I to install plugins
-- change the default font in your terminal to DejaVue Nerdfonts
 - run neovim 2 times to install everything
+- logout to reload the new default shell (not usefull if you use alacritty)
 
 ---
 
@@ -23,5 +23,10 @@ git clone git@github.com:tsiguenz/dotfiles.git && cd dotfiles
 - Execute the script init.sh:
 
 ```bash
-bash init.sh
+./init.sh
 ```
+
+## TODO
+
+- Delete sudo in the script to run `sudo ./init.sh`
+- Delete unused mason things
