@@ -1,10 +1,11 @@
 #!/bin/bash
-#
+
 set -ue
 
 RED="\e[31m"
 GREEN="\e[32m"
 NC="\e[0m"
+PWD=$(pwd)
 
 print_info() {
 	echo -e "${GREEN}[INFO] $1$NC"
@@ -37,8 +38,8 @@ create_dotfiles_symlinks() {
 	)
 
 	for dotfile in "${DOTFILES[@]}"; do
-		runuser -l "$SUDO_USER" rm -rf "${USER_HOME}/${dotfile:?}"
-		runuser -l "$SUDO_USER" ln -sf "${DIR}/${dotfile}" "${USER_HOME}/${dotfile}"
+		rm -rf "${USER_HOME}/${dotfile:?}"
+		ln -sf "${DIR}/${dotfile}" "${USER_HOME}/${dotfile}"
 	done
 }
 
@@ -51,11 +52,12 @@ cleanup() {
 setup_rust() {
 	print_info "Setup rust..."
 	if ! rustc -V; then
-		curl https://sh.rustup.rs -sSf >install_rust.sh
-		chmod +x install_rust.sh
-		runuser -u "$SUDO_USER" -- ./install_rust.sh -y
+		local INSTALL_FILE=$PWD/install_rust.sh
+		wget https://sh.rustup.rs -O "$INSTALL_FILE"
+		chmod +x "$INSTALL_FILE"
+		runuser -u "$SUDO_USER" -- "$INSTALL_FILE" -y
 		runuser -u "$SUDO_USER" -- bash -c "source $USER_HOME/.cargo/env"
-		rm -rf install_rust.sh
+		rm -rf "$INSTALL_FILE"
 	fi
 }
 
@@ -96,7 +98,7 @@ setup_tmux() {
 	print_info "Setup tmux..."
 	apt install -yq tmux
 	if [ ! -d "$USER_HOME/.tmux/plugins/tpm" ]; then
-		git clone https://github.com/tmux-plugins/tpm "$USER_HOME/.tmux/plugins/tpm"
+		runuser -l "$SUDO_USER" -c "git clone https://github.com/tmux-plugins/tpm $USER_HOME/.tmux/plugins/tpm"
 	fi
 }
 
@@ -104,7 +106,11 @@ setup_zsh() {
 	print_info "Setup zsh..."
 	apt install -yq zsh
 	if [ ! -d "$USER_HOME/.oh-my-zsh" ]; then
-		runuser -l "$SUDO_USER" curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh -s -- --unattended --keep-zshrc
+		local INSTALL_FILE="$PWD"/install_omzsh.sh
+		wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O "$INSTALL_FILE"
+		chmod +x "$INSTALL_FILE"
+		runuser -l "$SUDO_USER" -- "$INSTALL_FILE" --unattended --keep-zshrc
+		rm -rf "$INSTALL_FILE"
 	fi
 	chsh -s /usr/bin/zsh "$USER"
 }
@@ -112,7 +118,7 @@ setup_zsh() {
 setup_alacritty() {
 	print_info "Setup alacritty..."
 	if [ ! -f "/usr/bin/alacritty" ]; then
-		runuser -l "$SUDO_USER" cargo install alacritty
+		runuser -l "$SUDO_USER" -c "cargo install alacritty"
 		ln -s "$USER_HOME/.cargo/bin/alacritty" /usr/bin/alacritty
 	fi
 }
