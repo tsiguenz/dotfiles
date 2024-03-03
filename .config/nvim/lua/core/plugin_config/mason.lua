@@ -52,14 +52,7 @@ local servers = {
 	clangd = {},
 	pyright = {},
 	bashls = {},
-	ansiblels = {},
-	jsonls = {},
 	marksman = {},
-	rust_analyzer = {},
-	terraformls = {},
-	vimls = {},
-	yamlls = {},
-	golangci_lint_ls = {},
 }
 
 -- MASON.NVIM

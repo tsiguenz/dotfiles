@@ -47,14 +47,6 @@ return require("packer").startup(function(use)
 	-- lint and format
 	use("nvimtools/none-ls.nvim")
 	use("jay-babu/mason-null-ls.nvim")
-	-- Autocompletion plugin
-	-- 	use({
-	-- 		"hrsh7th/nvim-cmp",
-	-- 		requires = {
-	-- 			-- Adds LSP completion capabilities
-	-- 			"hrsh7th/cmp-nvim-lsp",
-	-- 		},
-	-- 	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
