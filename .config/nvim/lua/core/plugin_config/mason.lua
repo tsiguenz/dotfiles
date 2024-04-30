@@ -53,6 +53,7 @@ local servers = {
 	pyright = {},
 	bashls = {},
 	marksman = {},
+	rust_analyser = {},
 }
 
 -- MASON.NVIM
