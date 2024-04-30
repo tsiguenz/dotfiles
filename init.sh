@@ -10,8 +10,8 @@ DOTFILES=(
 	".tmux.conf"
 )
 
-for dotfile in "${DOTFILES[@]}";do
-	echo Create symlink for ${dotfile}
-	rm -rf "${HOME}/${dotfile}"
+for dotfile in "${DOTFILES[@]}"; do
+	echo Create symlink for "${dotfile}"
+	rm -rf "${HOME}/${dotfile:?}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
