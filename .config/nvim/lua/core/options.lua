@@ -7,10 +7,10 @@ set.listchars = {
 }
 set.mouse = "c"
 
-vim.tabstop = 2 -- size of a hard tabstop
-vim.shiftwidth = 2 -- size of an indentation
-vim.expandtab = false -- always uses tab instead of space characters
-vim.softtabstop = 2 -- number of spaces a <Tab> counts for.
+set.tabstop = 2 -- size of a hard tabstop
+set.shiftwidth = 2 -- size of an indentation
+set.expandtab = false -- always uses tab instead of space characters
+set.softtabstop = 2 -- number of spaces a <Tab> counts for.
 
 set.number = true
 set.relativenumber = true
