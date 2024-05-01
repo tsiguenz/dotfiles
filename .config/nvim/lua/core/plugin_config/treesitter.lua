@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 		"cpp",
 		"php",
 		"vim",
+		"vimdoc",
 		"vue",
 		"rust",
 		"markdown",
