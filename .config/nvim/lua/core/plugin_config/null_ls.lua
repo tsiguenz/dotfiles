@@ -20,6 +20,17 @@ local lsp_formatting = function(bufnr)
 	})
 end
 
+-- auto format on save for rust
+-- needed because using external formater
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.rs",
+	callback = function()
+		vim.cmd("Format")
+		-- can be:
+		-- vim.cmd("!rustfmt %")
+	end,
+})
+
 null_ls.setup({
 	-- set auto format on save
 	on_attach = function(client, bufnr)
