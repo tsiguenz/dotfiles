@@ -3,8 +3,9 @@ set relativenumber
 syntax on
 colorscheme ron
 set colorcolumn=80
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 inoremap jj <Esc>
 set splitbelow
 set splitright
