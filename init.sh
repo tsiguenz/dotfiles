@@ -3,11 +3,12 @@
 DIR=$(pwd)
 
 DOTFILES=(
-	"config/nvim"
-	"config/gdb"
 	"vim"
 	"tmux.conf"
 	"zshrc"
+	"config/nvim"
+	"config/gdb"
+	"config/alacritty"
 )
 
 for dotfile in "${DOTFILES[@]}"; do
