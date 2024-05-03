@@ -3,15 +3,16 @@
 DIR=$(pwd)
 
 DOTFILES=(
-	".vimrc"
-	".tmux.conf"
-	".config/nvim"
-	".config/gdb"
-	".tmux.conf"
+	"config/nvim"
+	"config/gdb"
+	"vim"
+	"tmux.conf"
+	"zshrc"
 )
 
 for dotfile in "${DOTFILES[@]}"; do
 	echo Create symlink for "${dotfile}"
-	rm -rf "${HOME}/${dotfile:?}"
-	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
+	dot_file_path="${HOME}"/."${dotfile}"
+	rm -rf "$dot_file_path"
+	ln -sf "${DIR}/${dotfile}" "$dot_file_path"
 done
