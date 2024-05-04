@@ -11,26 +11,23 @@ cmp.setup({
 	mapping = {
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),
-		-- Add tab support
-		["<S-Tab>"] = cmp.mapping.select_prev_item(),
-		["<Tab>"] = cmp.mapping.select_next_item(),
-		["<C-S-f>"] = cmp.mapping.scroll_docs(-4),
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.close(),
+		["<C-j>"] = cmp.mapping.complete(),
+		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Insert,
+			-- behavior = cmp.ConfirmBehavior.Insert,
 			select = true,
 		}),
 	},
 	-- Installed sources:
 	sources = {
 		{ name = "path" }, -- file paths
-		{ name = "nvim_lsp", keyword_length = 3 }, -- from language server
+		{ name = "nvim_lsp", keyword_length = 1 }, -- from language server
 		{ name = "nvim_lsp_signature_help" }, -- display function signatures with current parameter emphasized
-		{ name = "nvim_lua", keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
-		{ name = "buffer", keyword_length = 2 }, -- source current buffer
-		{ name = "vsnip", keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
+		{ name = "nvim_lua", keyword_length = 1 }, -- complete neovim's Lua runtime API such vim.lsp.*
+		{ name = "buffer", keyword_length = 4 }, -- source current buffer
+		{ name = "vsnip", keyword_length = 1 }, -- nvim-cmp source for vim-vsnip
 	},
 	window = {
 		completion = cmp.config.window.bordered(),
