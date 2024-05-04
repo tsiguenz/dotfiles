@@ -76,7 +76,7 @@ install_neovim() {
 		tar -xvf nvim-linux64.tar.gz >/dev/null
 		rm -rf nvim-linux64.tar.gz
 		mv nvim-linux64 /usr/share/
-		ln -s /usr/share/nvim-linux64/bin/nvim /usr/bin/nvim
+		ln -sf /usr/share/nvim-linux64/bin/nvim /usr/bin/nvim
 		print_info "neovim is now installed!"
 	else
 		print_info "neovim is already installed!"
