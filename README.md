@@ -19,5 +19,5 @@ Execute the script `init.sh` to create symlinks:
 Execute the script `install.sh` to install dependancies (logs are in `.log`):
 
 ```bash
-./install.sh
+sudo ./install.sh
 ```
