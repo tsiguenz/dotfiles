@@ -1,14 +1,18 @@
 shell = "/bin/zsh"
 
-[font]
+[mouse]
+bindings = [ { mouse = "Right", action = "Copy" }, ]
 
+[font]
 normal.family = "DejaVuSansM Nerd Font"
 bold.family = "DejaVuSansM Nerd Font"
 italic.family = "DejaVuSansM Nerd Font"
 bold_italic.family = "DejaVuSansM Nerd Font"
 
-# Colors (Gruvbox dark)
+[window]
+startup_mode = "Maximized"
 
+# Colors (Gruvbox dark)
 # Default colors
 [colors.primary]
 # hard contrast background = = '#1d2021'
