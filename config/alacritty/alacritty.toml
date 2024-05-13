@@ -10,7 +10,7 @@ italic.family = "DejaVuSansM Nerd Font"
 bold_italic.family = "DejaVuSansM Nerd Font"
 
 [window]
-startup_mode = "Maximized"
+startup_mode = "Fullscreen"
 
 # Colors (Gruvbox dark)
 # Default colors
