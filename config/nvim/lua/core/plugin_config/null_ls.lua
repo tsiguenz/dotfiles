@@ -57,7 +57,7 @@ mason_null_ls.setup({
 		"shellcheck",
 		"shfmt",
 		"flake8",
-		"autopep8",
+		"black",
 		"markdownlint",
 	},
 	automatic_installation = true,

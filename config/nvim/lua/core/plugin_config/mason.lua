@@ -54,6 +54,7 @@ local servers = {
 	bashls = {},
 	marksman = {},
 	rust_analyzer = {},
+	python_lsp_server = {},
 }
 
 -- MASON.NVIM
