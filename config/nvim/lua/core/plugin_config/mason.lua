@@ -50,11 +50,10 @@ local servers = {
 		},
 	},
 	clangd = {},
-	pyright = {},
 	bashls = {},
 	marksman = {},
 	rust_analyzer = {},
-	python_lsp_server = {},
+	ruff = {},
 }
 
 -- MASON.NVIM
